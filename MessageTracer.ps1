@@ -28,3 +28,4 @@ Get-MessageTrackingLog -Start (Get-Date).AddDays(-$days) `
 
 Write-Host "Output written to $outfile"
 
+Write-Host "Changed"
