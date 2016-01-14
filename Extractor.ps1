@@ -101,7 +101,7 @@ $RemoveSuccessfull=$true
 $unrar="C:\Program Files\WinRAR\UnRAR.exe"
 $drivesToScan = Get-PSDrive
 $excludes = @("Windows","Program Files","Program Files (x86)","Backup","Books","Farcry 3","virus","Games","Apps","Subs")
-$includes = @(".nfo",".sfv","Sample")
+$junkFiles = @(".nfo",".sfv","Sample")
 $rarList = @()
 
 # Search process
@@ -115,6 +115,6 @@ ForEach ( $drive in $drivesToScan){
 $rarList | % { Write-Host $_ -ForegroundColor Green}
 
 Extract-Rar $rarList $RemoveSuccessfull
-Clean-Junk $rarList $includes
+Clean-Junk $rarList $junkFiles
 
 # Done
